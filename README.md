@@ -14,6 +14,6 @@ Google Maps widget with traffic layer for HABpanel (Openhab).
   - Set to your position: gm_latitude / gm_longitude
 
 ## Help
-If you need any help, use this [topic](https://community.openhab.org/t/weather-underground-widget-with-forecast/40260) on the Openhab community forum.
+If you need any help, use this [topic](https://community.openhab.org/t/google-maps-widget-with-traffic-layer/40285) on the Openhab community forum.
 
 For issues and feature requests, please use the [Issues module](https://github.com/BasvanH/habpanel-widget-googlemaps/issues) on Github.
