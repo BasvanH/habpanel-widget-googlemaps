@@ -1,0 +1,7 @@
+{
+    "template": "<div ng-init=\"ServerPath='/static/google-maps/map.html'\">\n</div>\n\n<iframe ng-src=\"{{ServerPath}}\" style=\"height:600px; width:100%; display:block; border:0px;\"></iframe>",
+    "settings": [],
+    "name": "Google Maps with traffic",
+    "author": "Bastiaan van Haastrecht",
+    "description": "Google Maps with auto refreshing traffic layer. https://github.com/BasvanH/"
+}
