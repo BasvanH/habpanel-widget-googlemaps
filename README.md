@@ -5,6 +5,7 @@ Google Maps widget with traffic layer for HABpanel (Openhab).
 
 ## Installation
 - Import the downloaded widget to your HABpanel.
+- Set desired height of the map in the widget settings. Width is auto sized with the widget box size.
 - Place the maps.html file within your /conf/html folder structure.
 - Set the 'ServerPath' variable in the widget to this path.
 - Edit map.html file:
