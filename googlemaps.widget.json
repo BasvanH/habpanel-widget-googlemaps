@@ -1,5 +1,5 @@
 {
-    "template": "<div ng-init=\"ServerPath='/static/google-maps/map.html'\">\n</div>\n\n<iframe ng-src=\"{{ServerPath}}\" style=\"height:{{config.height}}px; width:100%; display:block; border:0px;\"></iframe>",
+    "template": "<iframe ng-src=\"{{config.serverpath + '?gm_zoomlevel=' + config.gm_zoomlevel + '&gm_latitude=' + config.gm_latitude + '&gm_longitude=' + config.gm_longitude + '&gm_apikey=' + config.gm_apikey}}\" style=\"height:{{config.height}}px; width:100%; display:block; border:0px;\"></iframe>",
     "settings": [
         {
             "type": "number",
@@ -7,6 +7,41 @@
             "label": "Height",
             "default": "600",
             "description": "Map frame height"
+        },
+        {
+            "type": "string",
+            "id": "serverpath",
+            "label": "Server Path",
+            "default": "/static/google-maps/map.html",
+            "description": "Change this value to use the correct path"
+        },
+        {
+            "type": "number",
+            "id": "gm_zoomlevel",
+            "label": "Google zoomlevel",
+            "default": "12",
+            "description": "Enter the required zoomlevel for googlemaps"
+        },
+        {
+            "type": "string",
+            "id": "gm_latitude",
+            "label": "Latitude",
+            "default": "",
+            "description": "Enter the latitude for your GPS coordinates"
+        },
+        {
+            "type": "string",
+            "default": "",
+            "label": "Longitude",
+            "id": "gm_longitude",
+            "description": "Enter the longitude for your GPS coordinates"
+        },
+        {
+            "type": "string",
+            "id": "gm_apikey",
+            "label": "Google maps API key",
+            "default": "<Enter your API key here !>",
+            "description": "Get your API key at https://developers.google.com/maps/documentation/javascript/get-api-key"
         }
     ],
     "name": "Google Maps with traffic",
