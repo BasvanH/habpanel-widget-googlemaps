@@ -19,25 +19,31 @@
   </head>
   <body>
     <div id="map"></div>
+	<script id="googleMapsUrl" async defer></script>
     <script>
-	    	var gm_zoomlevel = parseInt(getQueryVariable('gm_zoomlevel'));
+		// Get variables from parent iFrame
+		var gm_zoomlevel = parseInt(getQueryVariable('gm_zoomlevel'));
 		var gm_latitude = parseFloat(getQueryVariable('gm_latitude'));
 		var gm_longitude = parseFloat(getQueryVariable('gm_longitude'));
 		var gm_apikey = getQueryVariable('gm_apikey');
 
-		function getQueryVariable(variable)
-		{
-		var query = window.location.search.substring(1);
-		var vars = query.split("&");
-		for (var i=0;i<vars.length;i++) {
-			var pair = vars[i].split("=");
+		function getQueryVariable(variable) {
+			var query = window.location.search.substring(1);
+			var vars = query.split("&");
+			for (var i=0;i<vars.length;i++) {
+				var pair = vars[i].split("=");
 				if(pair[0] == variable){return pair[1];}
 			}
-		return(false);
+			return(false);
 		}
+
+		// Create script element with google maps API key
+		var script = document.getElementById("googleMapsUrl");
+		script.src = "https://maps.googleapis.com/maps/api/js?key=" + gm_apikey + "&callback=initialize";
+
 		var map,
 			trafficLayer;
-				
+
 		function initialize() {
 			var gm_options = {
 				zoom: gm_zoomlevel,
@@ -144,8 +150,7 @@
 				}				
 			}
 			console.log("Updating Google Maps Trafficlayer");
-		}	
+		}
     </script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=<your-api-key-here>&callback=initialize" async defer></script>
   </body>
 </html>
