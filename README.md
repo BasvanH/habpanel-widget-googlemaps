@@ -3,15 +3,18 @@
 ## Description
 Google Maps widget with traffic layer for HABpanel (Openhab).
 
+Get your Goolge Maps API key [here](https://developers.google.com/maps/documentation/javascript/get-api-key1).
+
 ## Installation
 - Import the downloaded widget to your HABpanel.
-- Set desired height of the map in the widget settings. Width is auto sized with the widget box size.
 - Place the map.html file within your /conf/html folder structure.
 - Set the 'ServerPath' variable in the widget to this path.
-- Edit map.html file:
-  - Fill in your API key at the bottom of the page
-  - Set to your preferred zoom level: gm_zoomlevel
-  - Set to your position: gm_latitude / gm_longitude
+- In the settings of the widget:
+  - Set ServerPath to the location of your map.html (/conf/html/ = /static/).
+  - Set your Google Maps API key.
+  - Set to your preferred zoom level.
+  - Set to your position in latitude and longitude.
+  - Set your desired height, the width is auto filling from wodget frame.
 
 ## Help
 If you need any help, use this [topic](https://community.openhab.org/t/google-maps-widget-with-traffic-layer/40285) on the Openhab community forum.
