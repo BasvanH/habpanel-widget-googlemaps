@@ -13,7 +13,7 @@
             "id": "serverpath",
             "label": "Server Path",
             "default": "/static/google-maps/map.html",
-            "description": "Change this value to use the correct path"
+            "description": "Change this value to your map.html"
         },
         {
             "type": "number",
