@@ -8,7 +8,6 @@ Get your Goolge Maps API key [here](https://developers.google.com/maps/documenta
 ## Installation
 - Import the downloaded widget to your HABpanel.
 - Place the map.html file within your /conf/html folder structure.
-- Set the 'ServerPath' variable in the widget to this path.
 - In the settings of the widget:
   - Set ServerPath to the location of your map.html (/conf/html/ = /static/).
   - Set your Google Maps API key.
