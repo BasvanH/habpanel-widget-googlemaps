@@ -1,5 +1,5 @@
 {
-    "template": "<iframe ng-src=\"{{config.serverpath + '?gm_zoomlevel=' + config.gm_zoomlevel + '&gm_latitude=' + config.gm_latitude + '&gm_longitude=' + config.gm_longitude + '&gm_apikey=' + config.gm_apikey}}\" style=\"height:{{config.height}}px; width:100%; display:block; border:0px;\"></iframe>",
+    "template": "<iframe ng-src=\"{{config.serverpath + '?gm_zoomlevel=' + config.gm_zoomlevel\n\t\t\t\t\t\t\t\t\t+ '&gm_latitude=' + config.gm_latitude\n\t\t\t\t\t\t\t\t\t+ '&gm_longitude=' + config.gm_longitude\n\t\t\t\t\t\t\t\t\t+ '&gm_travel=' + config.gm_travel\n\t\t\t\t\t\t\t\t\t+ '&gm_origin=' + config.gm_origin\n\t\t\t\t\t\t\t\t\t+ '&gm_destination=' + config.gm_destination\n\t\t\t\t\t\t\t\t\t+ '&gm_apikey=' + config.gm_apikey}}\" style=\"height:{{config.height}}px; width:100%; display:block; border:0px;\"></iframe>",
     "settings": [
         {
             "type": "number",
@@ -13,7 +13,7 @@
             "id": "serverpath",
             "label": "Server Path",
             "default": "/static/google-maps/map.html",
-            "description": "Change this value to your map.html"
+            "description": "Change this value to use the correct path"
         },
         {
             "type": "number",
@@ -37,6 +37,27 @@
             "description": "Enter the longitude for your GPS coordinates"
         },
         {
+            "type": "checkbox",
+            "id": "gm_travel",
+            "description": "Show travel time between two locations?",
+            "label": "Travel",
+            "default": true
+        },
+        {
+            "type": "string",
+            "id": "gm_origin",
+            "label": "Origin",
+            "description": "Start location for travel time calculation",
+            "default": "Amsterdam"
+        },
+        {
+            "type": "string",
+            "id": "gm_destination",
+            "label": "Destination",
+            "default": "Rotterdam",
+            "description": "End location for travel calculation"
+        },
+        {
             "type": "string",
             "id": "gm_apikey",
             "label": "Google maps API key",
@@ -46,5 +67,7 @@
     ],
     "name": "Google Maps with traffic",
     "author": "Bastiaan van Haastrecht",
-    "description": "Google Maps with auto refreshing traffic layer. https://github.com/BasvanH/"
+    "description": "Google Maps with auto refreshing traffic layer. NEW, added travel time calculation. https://github.com/BasvanH/",
+    "source_url": "https://raw.githubusercontent.com/BasvanH/habpanel-widget-googlemaps/master/googlemaps.widget.json",
+    "readme_url": "https://github.com/BasvanH/habpanel-widget-googlemaps"
 }
