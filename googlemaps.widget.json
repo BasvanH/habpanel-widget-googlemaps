@@ -1,73 +1,81 @@
 {
-    "template": "<iframe ng-src=\"{{config.serverpath + '?gm_zoomlevel=' + config.gm_zoomlevel\n\t\t\t\t\t\t\t\t\t+ '&gm_latitude=' + config.gm_latitude\n\t\t\t\t\t\t\t\t\t+ '&gm_longitude=' + config.gm_longitude\n\t\t\t\t\t\t\t\t\t+ '&gm_travel=' + config.gm_travel\n\t\t\t\t\t\t\t\t\t+ '&gm_origin=' + config.gm_origin\n\t\t\t\t\t\t\t\t\t+ '&gm_destination=' + config.gm_destination\n\t\t\t\t\t\t\t\t\t+ '&gm_apikey=' + config.gm_apikey}}\" style=\"height:{{config.height}}px; width:100%; display:block; border:0px;\"></iframe>",
-    "settings": [
-        {
-            "type": "number",
-            "id": "height",
-            "label": "Height",
-            "default": "600",
-            "description": "Map frame height"
-        },
-        {
-            "type": "string",
-            "id": "serverpath",
-            "label": "Server Path",
-            "default": "/static/google-maps/map.html",
-            "description": "Change this value to use the correct path"
-        },
-        {
-            "type": "number",
-            "id": "gm_zoomlevel",
-            "label": "Google zoomlevel",
-            "default": "12",
-            "description": "Enter the required zoomlevel for googlemaps"
-        },
-        {
-            "type": "string",
-            "id": "gm_latitude",
-            "label": "Latitude",
-            "default": "",
-            "description": "Enter the latitude for your GPS coordinates"
-        },
-        {
-            "type": "string",
-            "default": "",
-            "label": "Longitude",
-            "id": "gm_longitude",
-            "description": "Enter the longitude for your GPS coordinates"
-        },
-        {
-            "type": "checkbox",
-            "id": "gm_travel",
-            "description": "Show travel time between two locations?",
-            "label": "Travel",
-            "default": true
-        },
-        {
-            "type": "string",
-            "id": "gm_origin",
-            "label": "Origin",
-            "description": "Start location for travel time calculation",
-            "default": "Amsterdam"
-        },
-        {
-            "type": "string",
-            "id": "gm_destination",
-            "label": "Destination",
-            "default": "Rotterdam",
-            "description": "End location for travel calculation"
-        },
-        {
-            "type": "string",
-            "id": "gm_apikey",
-            "label": "Google maps API key",
-            "default": "<Enter your API key here !>",
-            "description": "Get your API key at https://developers.google.com/maps/documentation/javascript/get-api-key"
-        }
-    ],
-    "name": "Google Maps with traffic",
-    "author": "Bastiaan van Haastrecht",
-    "description": "Google Maps with auto refreshing traffic layer. NEW, added travel time calculation. https://github.com/BasvanH/",
-    "source_url": "https://raw.githubusercontent.com/BasvanH/habpanel-widget-googlemaps/master/googlemaps.widget.json",
-    "readme_url": "https://github.com/BasvanH/habpanel-widget-googlemaps"
+  "template": "<iframe ng-src=\"{{config.serverpath+'?gm_zoomlevel='+config.gm_zoomlevel+'&gm_latitude='+config.gm_latitude+'&gm_longitude='+config.gm_longitude+'&gm_travel='+config.gm_travel+'&gm_origin='+config.gm_origin+'&gm_destination='+config.gm_destination+'&gm_apikey='+config.gm_apikey+'&gm_distance_label=' + config.gm_distance_label+'&gm_average_label='+config.gm_average_label+'&gm_currently_label='+config.gm_currently_label}}\"style =\"height:{{config.height}}px; width:100%; display:block; border:0px;\"></iframe>",
+  "settings": [{
+    "type": "number",
+    "id": "height",
+    "label": "Height",
+    "default": "600",
+    "description": "Map frame height"
+  }, {
+    "type": "string",
+    "id": "serverpath",
+    "label": "Server Path",
+    "default": "/static/google-maps/map.html",
+    "description": "Change this value to use the correct path"
+  }, {
+    "type": "number",
+    "id": "gm_zoomlevel",
+    "label": "Google zoomlevel",
+    "default": "12",
+    "description": "Enter the required zoomlevel for googlemaps"
+  }, {
+    "type": "string",
+    "id": "gm_latitude",
+    "label": "Latitude",
+    "default": "",
+    "description": "Enter the latitude for your GPS coordinates"
+  }, {
+    "type": "string",
+    "default": "",
+    "label": "Longitude",
+    "id": "gm_longitude",
+    "description": "Enter the longitude for your GPS coordinates"
+  }, {
+    "type": "checkbox",
+    "id": "gm_travel",
+    "description": "Show travel time between two locations?",
+    "label": "Travel",
+    "default": true
+  }, {
+    "type": "string",
+    "id": "gm_origin",
+    "label": "Origin",
+    "description": "Start location for travel time calculation",
+    "default": "Amsterdam"
+  }, {
+    "type": "string",
+    "id": "gm_destination",
+    "label": "Destination",
+    "default": "Rotterdam",
+    "description": "End location for travel calculation"
+  }, {
+    "type": "string",
+    "id": "gm_distance_label",
+    "label": "Distance",
+    "default": "Distance",
+    "description": "Distance label for the language of your choice"
+  }, {
+    "type": "string",
+    "id": "gm_average_label",
+    "label": "Average",
+    "default": "Average",
+    "description": "Average label for the language of your choice"
+  }, {
+    "type": "string",
+    "id": "gm_currently_label",
+    "label": "Currently",
+    "default": "Currently",
+    "description": "Currently label for the language of your choice"
+  }, {
+    "type": "string",
+    "id": "gm_apikey",
+    "label": "Google maps API key",
+    "default": "<Enter your API key here !>",
+    "description": "Get your API key at https://developers.google.com/maps/documentation/javascript/get-api-key"
+  }],
+  "name": "Google Maps with traffic",
+  "author": "Bastiaan van Haastrecht",
+  "description": "Google Maps with auto refreshing traffic layer. NEW, added travel time calculation. https://github.com/BasvanH/",
+  "source_url": "https://raw.githubusercontent.com/BasvanH/habpanel-widget-googlemaps/master/googlemaps.widget.json",
+  "readme_url": "https://github.com/BasvanH/habpanel-widget-googlemaps"
 }
