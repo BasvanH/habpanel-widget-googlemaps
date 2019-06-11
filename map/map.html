@@ -53,9 +53,9 @@
 		var gm_apikey = getQueryVariable('gm_apikey');
 		var gm_travel = getQueryVariable('gm_travel');
 		var gm_origin = getQueryVariable('gm_origin');
-    var gm_destination = getQueryVariable('gm_destination');
-    var gm_distance_label = getQueryVariable('gm_distance_label');
-    var gm_average_label = getQueryVariable('gm_average_label');
+    		var gm_destination = getQueryVariable('gm_destination');
+    		var gm_distance_label = getQueryVariable('gm_distance_label');
+    		var gm_average_label = getQueryVariable('gm_average_label');
 		var gm_currently_label = getQueryVariable('gm_currently_label');
 
 		function getQueryVariable(variable) {
@@ -72,8 +72,10 @@
 		var script = document.getElementById("googleMapsUrl");
 		script.src = "https://maps.googleapis.com/maps/api/js?key=" + gm_apikey + "&callback=initialize";
 
-		var map,
-			trafficLayer;
+		var map;
+	    	var trafficLayer;
+		var directionsDisplay;
+		var directionsService;
 
 		function initialize() {
 			var gm_options = {
@@ -173,8 +175,9 @@
 		}
 
 		function calculateAndDisplayRoute() {
-			var directionsDisplay = new google.maps.DirectionsRenderer;
-			var directionsService = new google.maps.DirectionsService;
+			//directionsDisplay = null;
+			directionsDisplay = new google.maps.DirectionsRenderer;
+			directionsService = new google.maps.DirectionsService;
 			directionsDisplay.setMap(map);
 
 			directionsService.route({
@@ -196,10 +199,10 @@
 				summaryPanel.innerHTML += '<strong>' + gm_distance_label + '</strong>: ' + distance + '<br>';
 				summaryPanel.innerHTML += '<strong>' + gm_average_label  + '</strong>: ' + duration + '<br>';
 				summaryPanel.innerHTML += '<strong>' + gm_currently_label + '</strong>: ' + durationTraffic + '<br>';
-
+				summaryPanel.innerHTML += '<strong>' + "Status" + '</strong>: ' + "OK" + '<br>';
 				directionsDisplay.setDirections(response);
 			  } else {
-				window.alert('Directions request failed due to ' + status);
+				summaryPanel.innerHTML += '<strong>' + "Status" + '</strong>: ' + "FAILED" + '<br>';
 			  }
 			});
 		}
@@ -208,9 +211,10 @@
 			console.log("Updating Google Maps traffic and travel time");
 			reloadTiles();
 			if (gm_travel == 'true') {
+				directionsDisplay.set('directions', null);
 				calculateAndDisplayRoute();
 			}
-		}, 10000);
+		}, 300000);
 
 		function reloadTiles() {
 			var tiles = $("#map-canvas").find("img");
