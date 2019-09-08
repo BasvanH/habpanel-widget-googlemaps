@@ -3,7 +3,7 @@
 ## Description
 Google Maps widget with traffic layer for HABpanel (Openhab).
 
-Get your Goolge Maps API key [here](https://developers.google.com/maps/documentation/javascript/get-api-key1).
+Get your Goolge Maps API key [here](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
 ## Installation
 - Import the downloaded widget to your HABpanel.
