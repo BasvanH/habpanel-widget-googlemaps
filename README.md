@@ -1,5 +1,8 @@
 # Google Maps widget for HABpanel (Openhab)
 
+| WARNING: be careful to not overuse the Google API or you will be charged! Use this code at your own risk! |
+| --- |
+
 ## Description
 Google Maps widget with traffic layer for HABpanel (Openhab).
 
