@@ -1,9 +1,8 @@
 # Google Maps widget for HABpanel (Openhab)
 By making a donation, no matter how small, you are saying thanks and drawing a smile on my face because I will know, somebody thought my project was useful and worth paying for 🤩. [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?business=QARL4KXHHZSK8&currency_code=EUR)
 
-
-| WARNING: be careful to not overuse the Google API or you will be charged! Use this code at your own risk! |
-| --- |
+## WARNING
+Be careful not to overuse the Google API or you will be charged! Use this code at your own risk!
 
 ## Description
 Google Maps widget with traffic layer for HABpanel (Openhab).
